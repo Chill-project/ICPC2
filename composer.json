@@ -1,0 +1,31 @@
+{
+    "name": "chill-project/icpc2",
+    "license": "AGPL-3.0",
+    "type": "symfony-bundle",
+    "description": "ICPC2 for the Chill App",
+    "keywords" : ["chill", "social work", "icpc2"],
+    "homepage" : "https://github.com/Chill-project/ICPC2",
+    "autoload": {
+        "psr-4": { "Chill\\ICPC2Bundle\\": "" }
+    },
+    "authors" : [
+        {
+            "name": "Champs-Libres",
+            "email": "info@champs-libres.coop",
+            "homepage": "http://www.champs-libres.coop"
+        }
+    ],
+    "require": {
+        "php": "~5.5",
+        "twig/extensions": "~1.0",
+        "symfony/assetic-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
+        "symfony/framework-bundle": "2.5.*",
+        "symfony/yaml": "2.5.*",
+        "symfony/symfony": "2.5.*",
+        "doctrine/dbal": "2.5.*@dev",
+        "doctrine/orm": "2.5.*@dev",
+        "doctrine/common": "2.4.*@dev",
+        "doctrine/doctrine-bundle": "~1.2@dev"
+    }
+}
