@@ -48,7 +48,7 @@ class LoadChapter extends AbstractFixture implements OrderedFixtureInterface
         array("en" => "Eye", "slug" => "F"),
         array("en" => "Ear", "slug" => "H"),
         array("en" => "Cardiovascular", "slug" => "K"),
-        array("en" => "Musculoskeletal", "slug" => "K"),
+        array("en" => "Musculoskeletal", "slug" => "L"),
         array("en" => "Neurological", "slug" => "N"),
         array("en" => "Psychological", "slug" => "P"),
         array("en" => "Respiratory", "slug" => "R"),
@@ -59,9 +59,10 @@ class LoadChapter extends AbstractFixture implements OrderedFixtureInterface
         array("en" => "Female Genital", "slug" => "X"),
         array("en" => "Male Genital", "slug" => "Y"),
         array("en" => "Social Problems", "slug" => "Z")
-        ]
+        ];
 
         foreach ($chapters as $c) {
+            echo($c["en"]."\n");
             $e = (new Chapter())
                 ->setSlug($c["slug"])
                 ->setName(array("en" => $c["en"]));

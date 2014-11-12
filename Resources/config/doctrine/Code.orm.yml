@@ -14,10 +14,8 @@ Chill\ICPC2Bundle\Entity\Code:
         name:
             type: json_array
     manyToOne:
-        user:
-            targetEntity: Chill\MainBundle\Entity\User
         chapter:
-            targetEntity: Chill\ICPC2Bundle\Chapter
+            targetEntity: Chill\ICPC2Bundle\Entity\Chapter
         component:
-            targetEntity: Chill\ICPC2Bundle\Component
+            targetEntity: Chill\ICPC2Bundle\Entity\Component
     lifecycleCallbacks: {  }

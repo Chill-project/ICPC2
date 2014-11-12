@@ -29,7 +29,7 @@ use Chill\ICPC2Bundle\Entity\Component;
 /**
  * Load Component for Report into database
  */
-class LoadChapter extends AbstractFixture implements OrderedFixtureInterface
+class LoadComponent extends AbstractFixture implements OrderedFixtureInterface
 {
     public function getOrder()
     {
@@ -50,7 +50,8 @@ class LoadChapter extends AbstractFixture implements OrderedFixtureInterface
         array("en" => "OTHER DIAGNOSES", "slug" => "oth"),
         ];
 
-        foreach ($chapters as $c) {
+        foreach ($components as $c) {
+            echo($c["en"]."\n");
             $e = (new Component())
                 ->setSlug($c["slug"])
                 ->setName(array("en" => $c["en"]));

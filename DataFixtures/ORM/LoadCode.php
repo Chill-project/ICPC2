@@ -147,8 +147,8 @@ $codes = [
 ["neo","B75","Tumeur bénigne/indét. sang/lymph."],
 ["inj","B76","Rupture traumat. de la rate"],
 ["inj","B77","Autre traumat. sang/lymph/rate"],
-["con",","Anémie hémolytique héréditaire"],
-["con",","Autre anom. congénitale sang/ lymph/rate"],
+["con","B78","Anémie hémolytique héréditaire"],
+["con","B79","Autre anom. congénitale sang/ lymph/rate"],
 ["oth","B80","Anémie par déficience en fer"],
 ["oth","B81","Anémie carence vit B12/ac. folique"],
 ["oth","B82","Autre anémie/indét."],
@@ -770,16 +770,15 @@ $codes = [
 ];
 
         foreach ($codes as $c) {
+            echo($c[1]."\n");
             $e = (new Code())
                 ->setCode($c[1])
-                ->setChapter($this->addReference($c[1][0]))
-                ->setComponent($this->addReference($c[0]))
+                ->setChapter($this->getReference($c[1][0]))
+                ->setComponent($this->getReference($c[0]))
                 ->setName(array("en" => $c[2]));
 
             $manager->persist($e);
         }
-
-        $manager->persist($customField);
         
         $manager->flush();
     }
