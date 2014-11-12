@@ -1,0 +1,16 @@
+Chill\ICPC2Bundle\Entity\Chapter:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: json_array
+        slug:
+            type: string
+            length: 1
+    lifecycleCallbacks: {  }

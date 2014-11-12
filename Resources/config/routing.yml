@@ -1,0 +1,3 @@
+chill_icpc2_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ChillICPC2Bundle:Default:index }
