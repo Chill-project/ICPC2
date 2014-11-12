@@ -21,6 +21,8 @@
 
 namespace Chill\ICPC2Bundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * Chapter
  */
@@ -40,6 +42,13 @@ class Chapter
      * @var string
      */
     private $slug;
+
+    private $codes;  
+
+    public function __construct()
+    {
+        $this->codes = new ArrayCollection();
+    }  
 
 
     /**
@@ -77,6 +86,20 @@ class Chapter
     }
 
     /**
+     * Get name by locale
+     *
+     * @return string
+     */
+    public function getNameByLocale($lang, $defaultLang)
+    {
+        if(array_key_exists($lang, $this->name)) {
+            return $this->name[$lang];
+        } else {
+            return $this->name[$defaultLang];
+        }
+    }
+
+    /**
      * Set slug
      *
      * @param string $slug
@@ -98,6 +121,16 @@ class Chapter
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Get codes
+     *
+     * @return string
+     */
+    public function getCodes()
+    {
+        return $this->codes;
     }
 
 }

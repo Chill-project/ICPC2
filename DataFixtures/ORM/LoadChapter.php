@@ -41,31 +41,31 @@ class LoadChapter extends AbstractFixture implements OrderedFixtureInterface
         echo "loading Chapters...\n";
 
         $chapters =  [
-        array("en" => "Process codes", "slug" => "-"),
-        array("en" => "General and Unspecified", "slug" => "A"),
-        array("en" => "Blood, Blood Forming, Organs and Immune Mechanism", "slug" => "B"),
-        array("en" => "Digestive", "slug" => "D"),
-        array("en" => "Eye", "slug" => "F"),
-        array("en" => "Ear", "slug" => "H"),
-        array("en" => "Cardiovascular", "slug" => "K"),
-        array("en" => "Musculoskeletal", "slug" => "L"),
-        array("en" => "Neurological", "slug" => "N"),
-        array("en" => "Psychological", "slug" => "P"),
-        array("en" => "Respiratory", "slug" => "R"),
-        array("en" => "Skin", "slug" => "S"),
-        array("en" => "Endocrine/Metabolic and Nutritional", "slug" => "T"),
-        array("en" => "Urological", "slug" => "U"),
-        array("en" => "Pregnancy, Childbearing, Family Planning", "slug" => "W"),
-        array("en" => "Female Genital", "slug" => "X"),
-        array("en" => "Male Genital", "slug" => "Y"),
-        array("en" => "Social Problems", "slug" => "Z")
+        array("en" => "Process codes", "fr" => "Procédures", "slug" => "-"),
+        array("en" => "General and Unspecified", "fr" => "Général et non spécifié",  "slug" => "A"),
+        array("en" => "Blood, Blood Forming, Organs and Immune Mechanism", "fr" => "Sang, syst. hématop/ immunol.",  "slug" => "B"),
+        array("en" => "Digestive", "fr" => "Syst. Digestif",  "slug" => "D"),
+        array("en" => "Eye", "fr" => "Oeil",  "slug" => "F"),
+        array("en" => "Ear", "fr" => "Oreille",  "slug" => "H"),
+        array("en" => "Cardiovascular", "fr" => "Cardio-vasculaire",  "slug" => "K"),
+        array("en" => "Musculoskeletal", "fr" => "Ostéo-articulaire",  "slug" => "L"),
+        array("en" => "Neurological", "fr" => "Neurologique",  "slug" => "N"),
+        array("en" => "Psychological", "fr" => "Psychologique",  "slug" => "P"),
+        array("en" => "Respiratory", "fr" => "Respiratoire",  "slug" => "R"),
+        array("en" => "Skin", "fr" => "Peau",  "slug" => "S"),
+        array("en" => "Endocrine/Metabolic and Nutritional", "fr" => "Métabol., nutrit., endocrinien",  "slug" => "T"),
+        array("en" => "Urological", "fr" => "Système Urinaire",  "slug" => "U"),
+        array("en" => "Pregnancy, Childbearing, Family Planning", "fr" => "Grossesse, accouchement et PF",  "slug" => "W"),
+        array("en" => "Female Genital", "fr" => "Syst.génital féminin et sein",  "slug" => "X"),
+        array("en" => "Male Genital", "fr" => "Syst. génital masculin et sein",  "slug" => "Y"),
+        array("en" => "Social Problems", "fr" => "Social",  "slug" => "Z")
         ];
 
         foreach ($chapters as $c) {
             echo($c["en"]."\n");
             $e = (new Chapter())
                 ->setSlug($c["slug"])
-                ->setName(array("en" => $c["en"]));
+                ->setName(array("en" => $c["en"], "fr" => $c["fr"]));
 
             $this->addReference($c["slug"], $e);
 

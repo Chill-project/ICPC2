@@ -157,5 +157,19 @@ class Code
     {
         return $this->name;
     }
+
+    /**
+     * Get name
+     *
+     * @return array
+     */
+    public function getNameByLocale($lang, $defaultLang)
+    {
+        if(array_key_exists($lang, $this->name)) {
+            return $this->name[$lang];
+        } else {
+            return $this->name[$defaultLang];
+        }
+    }
 }
 

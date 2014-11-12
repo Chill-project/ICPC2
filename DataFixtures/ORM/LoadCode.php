@@ -775,7 +775,7 @@ $codes = [
                 ->setCode($c[1])
                 ->setChapter($this->getReference($c[1][0]))
                 ->setComponent($this->getReference($c[0]))
-                ->setName(array("en" => $c[2]));
+                ->setName(array("fr" => $c[2]));
 
             $manager->persist($e);
         }

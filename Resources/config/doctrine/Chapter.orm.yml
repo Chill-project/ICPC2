@@ -13,4 +13,10 @@ Chill\ICPC2Bundle\Entity\Chapter:
         slug:
             type: string
             length: 1
+    oneToMany:
+    oneToMany:
+        codes:
+            orderBy: { 'id': 'ASC' }
+            targetEntity: Chill\ICPC2Bundle\Entity\Code
+            mappedBy: chapter
     lifecycleCallbacks: {  }

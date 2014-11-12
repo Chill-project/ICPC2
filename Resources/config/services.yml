@@ -1,4 +1,10 @@
 services:
-#    chill_icpc2.example:
-#        class: Chill\ICPC2Bundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    chill.icp2.type:
+        class: Chill\ICPC2Bundle\CustomField\CustomFieldICPC2Code
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@request_stack"
+            - %locale%
+            - "@templating"
+        tags:
+            - { name: 'chill.custom_field', type: 'ICPC2' }
