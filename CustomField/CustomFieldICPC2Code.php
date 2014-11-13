@@ -97,6 +97,10 @@ class CustomFieldICPC2Code implements CustomFieldInterface
     {
         $code = $this->deserialize($value, $customField);
         
+        if (NULL === $code) {
+            return '';
+        }
+        
         return $this->templating->render("ChillICPC2Bundle:CustomFieldsRendering:"
               . "icpc2.html.twig", array(
                  'icpc' => $code
