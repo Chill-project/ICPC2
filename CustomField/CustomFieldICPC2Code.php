@@ -94,7 +94,12 @@ class CustomFieldICPC2Code implements CustomFieldInterface
 
     public function render($value, CustomField $customField)
     {
-        return $this->templating();
+        $code = $this->deserialize($value, $customField);
+        
+        return $this->templating->render("ChillICPC2Bundle:CustomFieldsRendering:"
+              . "icpc2.html.twig", array(
+                 'icpc' => $code
+              ));
     }
 
     public function buildOptionsForm(FormBuilderInterface $builder)
@@ -105,7 +110,7 @@ class CustomFieldICPC2Code implements CustomFieldInterface
     public function deserialize($serialized, CustomField $customField)
     {
         return $this->om->getRepository('ChillICPC2Bundle:Code')
-            ->findByCode($serialized);
+            ->findOneBy(array('code' => $serialized));
     }
 
     /**
