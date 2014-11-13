@@ -81,7 +81,7 @@ class CustomFieldICPC2Code implements CustomFieldInterface
             }
         }
 
-        $builder->add($customField->getSlug(), 'choice', array(
+        $builder->add($customField->getSlug(), 'select2_choice', array(
             'choices' => $codesChoice,
             'empty_value' => 'Choisissez le code CISP'
         ));
@@ -94,7 +94,7 @@ class CustomFieldICPC2Code implements CustomFieldInterface
 
     public function render($value, CustomField $customField)
     {
-        
+        return $this->templating();
     }
 
     public function buildOptionsForm(FormBuilderInterface $builder)
