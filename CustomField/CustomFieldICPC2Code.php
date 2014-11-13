@@ -73,11 +73,11 @@ class CustomFieldICPC2Code implements CustomFieldInterface
         $locale = $this->requestStack->getCurrentRequest()->getLocale();
 
         foreach  ($ICPC2Chapters as $chap) {
-            $chap_locale = $chap->getNameByLocale($locale, $this->defaultLocale);
+            $chap_locale = $chap->getNameByLocale($locale, $this->defaultLocale).' ('.$chap->getSlug().')';
             $codesChoice[$chap_locale] = array();
 
             foreach ($chap->getCodes() as $c) {
-                $codesChoice[$chap_locale][$c->getCode()] = $c->getNameByLocale($locale,$this->defaultLocale);
+                $codesChoice[$chap_locale][$c->getCode()] = $c->getCode().' - '.$c->getNameByLocale($locale,$this->defaultLocale);
             }
         }
 
