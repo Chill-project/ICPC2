@@ -27,6 +27,7 @@ use Chill\ICPC2BundleBundle\Entity\Code;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bridge\Twig\TwigEngine;
+use Chill\MainBundle\Templating\TranslatableStringHelper;
 
 /**
  * Todo
@@ -51,15 +52,22 @@ class CustomFieldICPC2Code implements CustomFieldInterface
      *
      * @var EntityManagerInterface
      */
-    public $om;
+    private $om;
+    
+    /**
+     *
+     * @var TranslatableStringHelper 
+     */
+    private $translatableStringHelper;
 
     public function __construct(EntityManagerInterface $om, RequestStack $requestStack, 
-        $defaultLocale, TwigEngine $templating)
+        $defaultLocale, TwigEngine $templating, TranslatableStringHelper $translatableStringHelper)
     {
         $this->om = $om;
         $this->requestStack = $requestStack;
         $this->defaultLocale = $defaultLocale;
         $this->templating = $templating;
+        $this->translatableStringHelper = $translatableStringHelper;
     }
 
     public function buildForm(FormBuilderInterface $builder, CustomField $customField)
@@ -84,7 +92,8 @@ class CustomFieldICPC2Code implements CustomFieldInterface
         $builder->add($customField->getSlug(), 'select2_choice', array(
             'choices' => $codesChoice,
             'empty_value' => 'Choisissez le code CISP',
-            'required' => false
+            'required' => false,
+            'label' => $this->translatableStringHelper->localize($customField->getName())
         ));
     }
 

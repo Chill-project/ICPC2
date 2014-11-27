@@ -6,5 +6,6 @@ services:
             - "@request_stack"
             - %locale%
             - "@templating"
+            - "@chill.main.helper.translatable_string"
         tags:
             - { name: 'chill.custom_field', type: 'ICPC2' }
