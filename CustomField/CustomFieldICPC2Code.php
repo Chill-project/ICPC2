@@ -91,7 +91,7 @@ class CustomFieldICPC2Code implements CustomFieldInterface
 
         $builder->add($customField->getSlug(), 'select2_choice', array(
             'choices' => $codesChoice,
-            'empty_value' => 'Choisissez le code CISP',
+            'empty_value' => 'Choose icpc code',
             'required' => false,
             'label' => $this->translatableStringHelper->localize($customField->getName())
         ));
