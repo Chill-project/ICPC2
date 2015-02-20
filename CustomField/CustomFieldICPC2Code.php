@@ -102,7 +102,7 @@ class CustomFieldICPC2Code implements CustomFieldInterface
         return 'CF ICPC2';
     }
 
-    public function render($value, CustomField $customField)
+    public function render($value, CustomField $customField, $documentType = 'html')
     {
         $code = $this->deserialize($value, $customField);
         
