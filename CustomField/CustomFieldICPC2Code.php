@@ -109,11 +109,15 @@ class CustomFieldICPC2Code implements CustomFieldInterface
         if (NULL === $code) {
             return '';
         }
+
+        $template = 'ChillICPC2Bundle:CustomFieldsRendering:icpc2.html.twig';
+        if($documentType == 'csv') {
+            $template = 'ChillICPC2Bundle:CustomFieldsRendering:icpc2.csv.twig';
+        }
         
-        return $this->templating->render("ChillICPC2Bundle:CustomFieldsRendering:"
-              . "icpc2.html.twig", array(
-                 'icpc' => $code
-              ));
+        return $this->templating->render(
+            $template,
+            array('icpc' => $code));
     }
 
     public function buildOptionsForm(FormBuilderInterface $builder)
