@@ -1,1 +1,3 @@
 vendor/*
+composer.lock
+Test/Fixtures/App/app/cache/*

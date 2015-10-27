@@ -30,5 +30,8 @@
         "chill-project/main": "dev-master@dev",
         "chill-project/custom-fields": "dev-master@dev",
         "doctrine/doctrine-migrations-bundle": "dev-master@dev"
+    },
+    "require-dev": {
+        "chill-project/person": "dev-master@dev"
     }
 }
